@@ -58,10 +58,12 @@ for i in peridperdate['air_store_id'].drop_duplicates():
     perid[i]=peridperdate[peridperdate['air_store_id']==i]
 id_list=peridperdate['air_store_id'].drop_duplicates()
 print(id_list)
+#考察了一个店
 store_id='air_0164b9927d20bcc3jud'
 print(perid[store_id])
 peridate_id=perid[store_id][['air_store_id', 'visit_date','visitors','rv1','div','dow']]
 print(peridate_id.corr())
+#测试visitor 和reserve 的高峰点和低谷点,结果对应较好，但是高峰点都在周六，与星期数据较符合，由于数据不是特别完整详细，待进一步检测
 """
 x_visitors=(peridate_id['visitors'])
 x_reserve=np.array(peridate_id['rv1'])
